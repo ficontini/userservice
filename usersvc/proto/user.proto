@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option go_package = "github.com/ficontini/user-search/usersvc/proto";
+
+service User{
+    rpc GetUserByID(UserRequest) returns (UserResponse);
+    rpc GetUsersByIDs(UsersRequest) returns (UsersResponse);
+    rpc GetUsersByCriteria(SearchRequest) returns (UsersResponse);
+}
+
+message UserRequest{
+    int64 id = 1;
+}
+message SearchRequest{
+    string city = 1; 
+    string name = 2; 
+}
+message UsersRequest{
+    repeated int64 ids = 1;
+}
+message UsersResponse{
+    repeated UserResponse users = 1; 
+}
+message UserResponse{
+    int64 id = 1; 
+    string fname = 2; 
+    string city = 3; 
+    string phone = 4; 
+    double height = 5;
+    bool married = 6; 
+}
