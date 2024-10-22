@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      goland: 1.22
+      golang: 1.22
     commands:
       - echo installing dependencies..
       - go mod tidy
