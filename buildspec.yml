@@ -9,8 +9,8 @@ phases:
       - go mod tidy
   build:
     commands:
-      - echo Build started on `date`
-      - make usersvc
+      - echo Build started
+      - go build -o bin/usersvc ./usersvc/cmd
   post_build:
     commands:
-      - echo Build completed on `date`
+      - echo Build completed 
